@@ -797,6 +797,32 @@ article:hover figcaption {
     }
 }
 
+@media screen and (min-width: 90em) {
+    .detail h1 {
+        margin: 2.5em 0 2em 0;
+    }
+
+    .detail h2 {
+        margin: 0.4em 0;
+    }
+
+    .detail {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .detail article p {
+        margin: 0;
+        width: 60%;
+        margin-bottom: 2em;
+    }
+
+    .Main_Slideshow {
+        float: right;
+        margin-top: -15em;
+    }
+}
+
 /* ------------- Detail page end ------------- */
 
 
