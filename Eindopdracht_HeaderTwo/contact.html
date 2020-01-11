@@ -25,11 +25,9 @@
         </ul>
     </nav>
 
-    <h2 id="contacth2">Neem contact op!</h2>
-
     <form action="">
         <fieldset>
-            <legend></legend>
+            <legend>Neem contact op!</legend>
             <label for="Name">Naam
                 <input id="Name" type="text" placeholder="Jouw naam hier" required></label>
 
@@ -45,6 +43,12 @@
 
             <label for="Bericht">Bericht
                 <input id="Bericht" type="subject" placeholder="Jouw bericht hier" required></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Cijfer</legend>
+            <label for="cijfer">Wat voor cijfer zou u dit geven?
+                <input id="cijfer" type="number" placeholder="1 t/m 10" required step="0.1" min="6" max="10" oninvalid="this.setCustomValidity('Cijfer moet een 6 of hoger zijn! :)')" oninput="this.setCustomValidity('')"></label>
 
             <button type="submit">Verstuur</button>
         </fieldset>
@@ -59,7 +63,7 @@
     </p>
 
     <footer>
-         <p>Copyright © 2020 Sebastiaan Hulst</p>
+        <p>Copyright © 2020 Sebastiaan Hulst</p>
     </footer>
 
     <script src="js/script.js"></script>

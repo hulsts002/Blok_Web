@@ -13,9 +13,34 @@ navBarToggle.addEventListener('click', function () {
     mainNav.classList.toggle('active');
 });
 
+//nav scroll shadow from: https://codepen.io/jhiam/pen/woZaKZ
+
+window.onscroll = () => {
+    const nav = document.querySelector('nav');
+    if (this.scrollY <= 10) {
+        nav.className = '';
+    } else {
+        nav.className = 'scroll';
+    }
+};
 
 
-// Slideshow from: https://codepen.io/macro6461/pen/MdJwOa
+
+//Dark mode toggle
+function myFunction() {
+    var body = document.body;
+    body.classList.toggle("darkModeBody");
+
+    var toggle = document.getElementById('mode');
+    if (toggle.innerHTML === 'Light Mode') {
+        toggle.innerHTML = 'Dark Mode';
+    } else {
+        toggle.innerHTML = 'Light Mode';
+    }
+}
+
+
+// Slideshow from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -37,10 +62,10 @@ function showSlides(n) {
       slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].className = dots[i].className.replace(" activeSlide", "");
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].className += " activeSlide";
 }
 
 
@@ -576,32 +601,5 @@ function showSlides(n) {
 AOS.init({
     duration: 1200,
 })
-
-
-//nav scroll shadow from: https://codepen.io/jhiam/pen/woZaKZ
-
-window.onscroll = () => {
-    const nav = document.querySelector('nav');
-    if (this.scrollY <= 10) {
-        nav.className = '';
-    } else {
-        nav.className = 'scroll';
-    }
-};
-
-
-
-//Dark mode toggle
-function myFunction() {
-    var body = document.body;
-    body.classList.toggle("darkModeBody");
-
-    var toggle = document.getElementById('mode');
-    if (toggle.innerHTML === 'Light Mode') {
-        toggle.innerHTML = 'Dark Mode';
-    } else {
-        toggle.innerHTML = 'Light Mode';
-    }
-}
 
 
