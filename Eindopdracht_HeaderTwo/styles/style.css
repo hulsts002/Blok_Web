@@ -2,6 +2,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
     background-color: rgb(248, 248, 248);
     margin: 0;
+    overflow-x: hidden;
 }
 
 .darkModeBody {
@@ -253,16 +254,15 @@ nav.scroll {
     }
 }
 
-/* Small About Me end */
+/* ------------- Small About Me end ------------- */
 
-/* Content index */
+/* ------------- Content index ------------- */
 
 .content article:nth-of-type(1) {
-    padding: 0.2em 2em;
+    padding: 1em 2em 2em 2em;
     text-decoration: none;
     display: grid;
     grid-template-columns: 1fr;
-    padding-bottom: 1em;
 }
 
 .content article:nth-of-type(1) img,
@@ -273,18 +273,22 @@ nav.scroll {
     margin-top: 1em;
 }
 
+.content article:nth-of-type(1) img {
+    margin-top: -20px;
+    margin-bottom: -60px;
+}
+
 .content article:nth-of-type(1) p,
 .content article:nth-of-type(2) p {
     padding-right: 0;
 }
 
 .content article:nth-of-type(2) {
-    padding: 0.2em 2em;
+    padding: 1em 2em 2em 2em;
     text-decoration: none;
     background-color: skyblue;
     display: grid;
     grid-template-columns: 1fr;
-    padding-bottom: 1em;
 }
 
 .content article:nth-of-type(1) h2,
@@ -293,6 +297,7 @@ nav.scroll {
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .content article:nth-of-type(2) p {
@@ -356,9 +361,12 @@ nav.scroll {
         display: grid;
         grid-template-columns: 1fr;
         padding-bottom: 1em;
-        overflow: auto;
-        padding: 1em 5em;
+        padding: 2em 5em;
+    }
 
+    .content article:nth-of-type(1) h2,
+    .content article:nth-of-type(2) h2 {
+        margin-top: 0px;
     }
 
     .content article:nth-of-type(1) img,
@@ -366,6 +374,11 @@ nav.scroll {
         width: 300px;
         height: auto;
         margin: auto;
+    }
+
+    .content article:nth-of-type(1) img {
+        margin-top: -20px;
+        margin-bottom: -60px;
     }
 
     .content article:nth-of-type(1) p,
@@ -379,7 +392,6 @@ nav.scroll {
     .content article:nth-of-type(1),
     .content article:nth-of-type(2) {
         display: block;
-        overflow: auto;
         padding: 1em 5em 3em 5em;
     }
 
@@ -393,6 +405,7 @@ nav.scroll {
     .content article:nth-of-type(1) h2,
     .content article:nth-of-type(2) h2 {
         text-align: left;
+        margin-top: 33px;
     }
 
     .content article:nth-of-type(1) p,
@@ -430,7 +443,6 @@ nav.scroll {
     .content article:nth-of-type(1),
     .content article:nth-of-type(2) {
         display: block;
-        overflow: auto;
         padding: 1em 11em 3em 11em;
     }
 
@@ -444,6 +456,7 @@ nav.scroll {
     .content article:nth-of-type(1) h2,
     .content article:nth-of-type(2) h2 {
         text-align: left;
+        margin-top: 33px;
     }
 
     .content article:nth-of-type(1) p,
@@ -580,7 +593,7 @@ article:hover figcaption {
     }
 }
 
-/* ------------- Detail Pages ------------- */
+/* ------------- Detail General ------------- */
 
 /* slideshow from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow */
 
@@ -589,6 +602,7 @@ article:hover figcaption {
     max-width: 500px;
     position: relative;
     margin: auto;
+    text-align: center;
 }
 
 /* Next & previous buttons */
@@ -608,6 +622,10 @@ article:hover figcaption {
     user-select: none;
 }
 
+.prev {
+    left: 0;
+}
+
 /* Position the "next button" to the right */
 .next {
     right: 0;
@@ -624,12 +642,13 @@ article:hover figcaption {
 .text {
     color: #f2f2f2;
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-    font-size: 15px;
+    font-size: 17px;
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
     width: 100%;
     text-align: center;
+    margin-left: 1em;
 }
 
 /* Number text (1/3 etc) */
@@ -683,25 +702,54 @@ article:hover figcaption {
 .detail {
     width: 90vw;
     margin: auto;
+    text-align: center;
 }
 
 .detail h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 5em;
-    text-align: center;
+    font-size: 2.8em;
     margin: 1em 0;
+    padding: 0.2em;
+    background: linear-gradient(to right, rgba(210, 0, 0, 0) 50%, rgba(173, 0, 0, 1) 50%);
+    background-size: 200%;
+    display: inline-block;
+    animation: bg 1.5s ease-in-out normal forwards;
+    animation-delay: 0.5s;
+    transition: 0.5s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes bg {
+    from {
+        background-position: 0 0;
+        color: black;
+    }
+
+    to {
+        background-position: -100% 0;
+        color: white;
+    }
 }
 
 .detail h2 {
     width: 100%;
     color: skyblue;
     margin: auto;
+    text-align: left;
 }
 
 .detail article p {
     width: 100%;
-    margin: auto;
+    text-align: left;
+}
+
+.detail article p:nth-of-type(2) {
     margin-bottom: 2em;
+}
+
+.detail article div {
+    text-align: left;
 }
 
 .pdf {
@@ -714,7 +762,6 @@ article:hover figcaption {
     text-decoration: none;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
 }
 
 .pdf:hover {
@@ -746,7 +793,8 @@ article:hover figcaption {
 
 @media screen and (min-width: 60em) {
     .detail h1 {
-        margin: 2.5em 0 2em 0;
+        font-size: 4em;
+        margin: 2.5em 0 2.5em 0;
     }
 
     .detail h2 {
@@ -756,12 +804,11 @@ article:hover figcaption {
     .detail {
         width: 90vw;
         margin: auto;
+        text-align: center;
     }
 
     .detail article p {
-        margin: 0;
         width: 40%;
-        margin-bottom: 2em;
     }
 
     .Main_Slideshow {
@@ -773,6 +820,7 @@ article:hover figcaption {
 
 @media screen and (min-width: 70em) {
     .detail h1 {
+        font-size: 5em;
         margin: 2.5em 0 2em 0;
     }
 
@@ -786,15 +834,14 @@ article:hover figcaption {
     }
 
     .detail article p {
-        margin: 0;
         width: 40%;
-        margin-bottom: 2em;
     }
 
     .Main_Slideshow {
         float: right;
         margin-top: -22em;
     }
+
 }
 
 @media screen and (min-width: 90em) {
@@ -812,15 +859,161 @@ article:hover figcaption {
     }
 
     .detail article p {
-        margin: 0;
         width: 60%;
-        margin-bottom: 2em;
     }
 
     .Main_Slideshow {
         float: right;
         margin-top: -15em;
     }
+
+}
+
+
+/* NDB */
+
+
+.ndb {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+}
+
+.ndb h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    margin: 1em 0;
+    padding: 0.2em;
+    background: linear-gradient(to right, rgba(210, 0, 0, 0) 50%, rgba(135, 0, 86, 1) 50%);
+    background-size: 200%;
+    display: inline-block;
+    animation: bg 1.5s ease-in-out normal forwards;
+    animation-delay: 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes bg {
+    from {
+        background-position: 0 0;
+        color: black;
+    }
+
+    to {
+        background-position: -100% 0;
+        color: white;
+    }
+}
+
+.ndb h2 {
+    width: 100%;
+    color: skyblue;
+    margin: auto;
+    text-align: left;
+}
+
+.ndb article p {
+    width: 100%;
+    text-align: left;
+}
+
+.ndb article p:nth-of-type(2) {
+    margin-bottom: 2em;
+}
+
+.ndb article div:first-of-type {
+    text-align: left;
+}
+
+iframe {
+    transform: scale(0.4);
+    margin-left: -270px;
+    margin-top: -170px;
+}
+
+@media screen and (min-width: 45em) {
+    iframe {
+        transform: scale(0.5);
+        margin-left: -110px;
+        margin-top: -140px;
+    }
+}
+
+
+@media screen and (min-width: 60em) {
+    .ndb h1 {
+        font-size: 4em;
+        margin: 2.5em 0 2.5em 0;
+    }
+
+    .ndb h2 {
+        margin: 0.4em 0;
+    }
+
+    .ndb {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .ndb article p {
+        width: 50%;
+    }
+
+    iframe {
+        transform: scale(0.4);
+        margin-left: 230px;
+        margin-top: -545px;
+    }
+
+}
+
+
+@media screen and (min-width: 70em) {
+    .ndb h1 {
+        font-size: 5em;
+        margin: 2.5em 0 2em 0;
+    }
+
+    .ndb h2 {
+        margin: 0.4em 0;
+    }
+
+    .ndb {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .ndb article p {
+        width: 40%;
+    }
+
+    iframe {
+        transform: scale(0.5);
+        margin-left: 250px;
+        margin-top: -560px;
+    }
+
+}
+
+@media screen and (min-width: 90em) {
+    .ndb h1 {
+        font-size: 5em;
+        margin: 2.5em 0 2em 0;
+    }
+
+    .ndb h2 {
+        margin: 0.4em 0;
+    }
+
+    .nbd {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .ndb article p {
+        width: 60%;
+    }
+
 }
 
 /* ------------- Detail page end ------------- */
@@ -856,7 +1049,7 @@ article:hover figcaption {
 
 .aboutme h1 {
     display: inline-block;
-    font-family: 'Bebas Neue';
+    font-family: 'Oswald', sans-serif;
     font-size: 2.5em;
     color: black;
     margin: 1em 0 0 0;
@@ -929,15 +1122,10 @@ hr {
 
     }
 
-    .aboutme p:nth-of-type(1) {
+    .aboutme article p {
         width: 55%;
-        margin-top: 1em;
     }
 
-    .aboutme p:nth-of-type(2) {
-        width: 55%;
-        margin-top: 4em;
-    }
 
     .aboutme img {
         width: 16em;
@@ -961,7 +1149,7 @@ hr {
     }
 
     .aboutme h1 {
-        font-size: 4em;
+        font-size: 3.6em;
         color: black;
         margin: 1em 0 0 0;
     }
@@ -972,7 +1160,6 @@ hr {
 
     .aboutme p:nth-of-type(2) {
         width: 55%;
-        margin-top: 2em;
     }
 
     .aboutme img {
@@ -1187,7 +1374,7 @@ footer {
     color: black;
     font-size: 0.8em;
     margin: auto;
-    margin: 0.4em;
+    margin: 2.5em 0.4em 0.4em 0.4em;
 }
 
 footer p {
